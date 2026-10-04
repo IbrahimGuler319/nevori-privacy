@@ -11,9 +11,7 @@
             --text-color: #d1cbdc;
             --heading-color: #fbf8f5;
             --accent-color: #e2b072;
-            --accent-glow: rgba(226, 176, 114, 0.18);
             --border-color: rgba(255, 255, 255, 0.08);
-            --border-active: #e2b072;
         }
 
         * {
@@ -24,7 +22,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
+            line-height: 1.75;
             padding: 40px 20px 80px 20px;
             max-width: 860px;
             margin: 0 auto;
@@ -35,7 +33,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 36px;
+            margin-bottom: 24px;
         }
 
         .brand-title {
@@ -44,7 +42,7 @@
             letter-spacing: 6px;
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .brand-subtitle {
@@ -53,65 +51,45 @@
             letter-spacing: 1.5px;
         }
 
-        /* Sekme Navigasyonu */
-        .tab-bar {
+        /* Hızlı Atlama Çubuğu */
+        .quick-nav {
             display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            padding: 10px;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 30px;
-            padding: 4px;
-            margin-bottom: 36px;
-            position: sticky;
-            top: 20px;
-            backdrop-filter: blur(20px);
-            z-index: 100;
+            border-radius: 16px;
         }
 
-        .tab-btn {
-            flex: 1;
-            padding: 12px 18px;
+        .quick-nav a {
+            padding: 8px 16px;
+            color: var(--accent-color);
+            text-decoration: none;
             font-size: 13px;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            border: none;
-            background: transparent;
-            color: #8c839f;
-            cursor: pointer;
-            border-radius: 26px;
-            transition: all 0.25s ease;
+            border-radius: 10px;
+            transition: background 0.2s;
         }
 
-        .tab-btn.active {
-            background: var(--accent-color);
-            color: #120e18;
-            box-shadow: 0 4px 14px var(--accent-glow);
-        }
-
-        .tab-pane {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .tab-pane.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+        .quick-nav a:hover {
+            background: rgba(226, 176, 114, 0.12);
         }
 
         h1 {
             color: var(--accent-color);
-            font-size: 24px;
-            margin-bottom: 12px;
+            font-size: 26px;
+            margin-bottom: 8px;
             letter-spacing: -0.02em;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         h2 {
             color: var(--heading-color);
-            font-size: 17px;
-            margin-top: 30px;
+            font-size: 18px;
+            margin-top: 28px;
             margin-bottom: 10px;
             border-left: 3px solid var(--accent-color);
             padding-left: 12px;
@@ -133,9 +111,9 @@
         }
 
         .meta-info {
-            font-size: 12.5px;
+            font-size: 13px;
             color: #8c839f;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .highlight-box {
@@ -143,8 +121,14 @@
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 18px 22px;
-            margin: 24px 0;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            margin: 20px 0;
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: var(--border-color);
+            margin: 60px 0;
         }
 
         strong {
@@ -161,7 +145,7 @@
         }
 
         footer {
-            margin-top: 60px;
+            margin-top: 50px;
             text-align: center;
             font-size: 12px;
             color: #635b75;
@@ -177,157 +161,136 @@
         <div class="brand-subtitle">KOZMİK REHBERLİK & SEZGİSEL SEANS</div>
     </header>
 
-    <nav class="tab-bar">
-        <button class="tab-btn active" onclick="switchTab('privacy')">Gizlilik Politikası</button>
-        <button class="tab-btn" onclick="switchTab('terms')">Kullanım Koşulları (EULA)</button>
-    </nav>
+    <div class="quick-nav">
+        <a href="#gizlilik">↓ Gizlilik Politikası</a>
+        <a href="#kullanim-kosullari">↓ Kullanım Koşulları (EULA)</a>
+    </div>
 
-    <!-- ======================================================== -->
-    <!-- SEKME 1: GİZLİLİK POLİTİKASI (PRIVACY POLICY)             -->
-    <!-- ======================================================== -->
-    <div id="privacy-pane" class="tab-pane active">
+    <!-- ========================================== -->
+    <!-- BÖLÜM 1: GİZLİLİK POLİTİKASI              -->
+    <!-- ========================================== -->
+    <section id="gizlilik">
         <h1>Nevori Gizlilik Politikası</h1>
-        <div class="meta-info">Son Güncelleme: 4 Ekim 2026 | Sürüm: 1.0.0</div>
+        <div class="meta-info">Yürürlük Tarihi: 4 Ekim 2026 | Sürüm: 1.0.0</div>
 
-        <p>Nevori ("biz", "bizim" veya "Uygulama"), kullanıcılarımızın ("Kullanıcı", "siz") gizlilik haklarına derin saygı duyar. Bu Gizlilik Politikası, Nevori mobil uygulamasını kullandığınızda hangi kişisel verilerin toplandığını, nasıl saklandığını, işlendiğini ve üçüncü taraf servis sağlayıcılar aracılığıyla nasıl korunduğunu açıklar.</p>
+        <p>Nevori ("biz", "bizim" veya "Uygulama"), kullanıcılarımızın ("Kullanıcı", "siz") gizlilik haklarına derin saygı duyar. Bu Gizlilik Politikası, Nevori mobil uygulamasını kullandığınızda hangi kişisel verilerin toplandığını, nasıl saklandığını, işlendiğini ve üçüncü taraf servis sağlayıcılar aracılığıyla nasıl korunduğunu ayrıntılı biçimde açıklar.</p>
 
         <div class="highlight-box">
-            <strong>Özet Beyan:</strong> Nevori, fincan fotoğraflarınızı kalıcı olarak depolamaz veya reklam hedeflemesinde kullanmaz. Seans sohbetleriniz, sırlar ve kişisel yaşam detaylarınız üçüncü taraflara satılmaz ve kamuya açık yapay zeka modellerinin eğitimi için kullanılmaz.
+            <strong>Özet Beyan:</strong> Nevori, fincan görsellerinizi asla reklam hedeflemesi amacıyla kullanmaz veya sunucularında kalıcı olarak depolamaz. Paylaştığınız kişisel sırlar, seans sohbetleri ve yaşam detayları üçüncü taraflara satılmaz ve model eğitimi için kullanılmaz.
         </div>
 
         <h2>1. Toplanan Kişisel Veriler</h2>
+        <p>Uygulamayı kullanırken sunduğumuz deneyimin kişiselleştirilmesi amacıyla aşağıdaki veriler toplanmaktadır:</p>
         <ul>
-            <li><strong>Kimlik ve Oturum Bilgileri:</strong> Google Sign-In veya Sign in with Apple aracılığıyla sağlanan ad-soyad, e-posta adresi ve benzersiz kullanıcı kimlik numarası (User UID).</li>
+            <li><strong>Kimlik ve Oturum Bilgileri:</strong> Google Sign-In veya Sign in with Apple aracılığıyla sağlanan ad-soyad, e-posta adresi ve sistem tarafından atanan benzersiz kullanıcı kimlik numarası (User UID).</li>
             <li><strong>Astrolojik ve Profil Verileri (Yaşam Dosyası):</strong> Danışan adı, doğum tarihi, yaş, burç ve medeni durum bilgileri.</li>
-            <li><strong>Kamera ve Fincan Fotoğrafları:</strong> Kahve falı analizi amacıyla kameranızdan çekilen veya galeriden seçilen fincan fotoğrafları.</li>
-            <li><strong>Seans ve Fal Verileri:</strong> Çekilen 3 kart tarot kayıtları, seçilen kozmik odaklar, telvede beliren semboller ve rehberlik seanslarındaki mesajlaşma geçmişi.</li>
-            <li><strong>Teknik Cihaz ve Analitik Veriler:</strong> Cihaz modeli, işletim sistemi sürümü, saat dilimi ve hata/çökme logları.</li>
+            <li><strong>Kamera ve Fincan Fotoğrafları:</strong> Kahve falı çözümlemesi amacıyla cihaz kamerasından çekilen veya galeriden seçilen fincan/tabak fotoğrafları.</li>
+            <li><strong>Seans ve Fal Verileri:</strong> Çektiğiniz 3 kart tarot kayıtları, seçilen kozmik odaklar, tespit edilen telve sembolleri ve interaktif rehberlik seanslarındaki mesaj geçmişi.</li>
+            <li><strong>Teknik Cihaz ve Analitik Veriler:</strong> Cihaz modeli, işletim sistemi sürümü, saat dilimi ve uygulama performansı/çökme logları.</li>
         </ul>
 
         <h2>2. Kamera ve Görsel Verilerinin İşlenme Esasları</h2>
-        <p>Kahve falı modülünde cihazınızın kamerasına ve fotoğraf galerisine erişim talep edilir:</p>
+        <p>Kahve falı modülünde cihazınızın kamerasına ve fotoğraf galerisine erişim izni talep edilir:</p>
         <ul>
-            <li>Yüklenen fotoğraflar ilk olarak cihaz üzerinde yerel olarak çalışan <strong>Google ML Kit</strong> kütüphanesiyle taranır (fincan nesnesi doğrulaması).</li>
-            <li>Fotoğraflar bulut sunucularımızda kalıcı olarak <strong>saklanmaz</strong>. Analiz işlemi tamamlandıktan hemen sonra geçici bellekten silinir.</li>
-            <li>Görseller yüz tanıma, biyometrik kimlik tespiti veya reklam profillemesi amacıyla asla işlenmez.</li>
+            <li>Yüklenen fotoğraflar ilk olarak cihaz üzerinde yerel olarak çalışan <strong>Google ML Kit</strong> görüntü işleme kütüphanesiyle taranır (fincan nesnesi doğrulaması).</li>
+            <li>Görseller sunucularımızda kalıcı bir veritabanında <strong>saklanmaz</strong>. Analiz işlemi tamamlandıktan hemen sonra geçici bellekten silinir.</li>
+            <li>Fotoğraflarınız hiçbir suretle yüz tanıma, biyometrik veri toplama veya reklam hedefleme amacıyla işlenmez.</li>
         </ul>
 
         <h2>3. Yapay Zeka (AI) ve Büyük Dil Modellerinin (LLM) Kullanımı</h2>
         <p>Nevori, fal sentezi ve sezgisel rehberlik üretiminde <strong>Google Gemini API (Gemini 3.1 Flash-Lite)</strong> altyapısından faydalanır:</p>
         <ul>
-            <li>Gemini servisine iletilen metinler (seçilen kartlar, semboller, seans mesajları) yalnızca anlık yanıt üretimi amacıyla işlenir.</li>
-            <li>Kurumsal API lisansımız gereği, Google bu verileri genel yapay zeka modellerini eğitmek veya geliştirmek amacıyla <strong>kullanmaz</strong>.</li>
-            <li>Üretilen kehanet ve seans yorumları eğlence ve kişisel farkındalık simülasyonu olup hukuki, tıbbi veya finansal bağlayıcılık taşımaz.</li>
+            <li>Gemini servisine iletilen metinler (seçilen tarot kartları, semboller, seans mesajları ve takma adınız) yalnızca anlık yanıt üretimi amacıyla işlenir.</li>
+            <li>Kurumsal API lisansımız gereği, Google bu verileri genel kamuya açık yapay zeka modellerini eğitmek veya geliştirmek amacıyla <strong>kullanmaz</strong>.</li>
+            <li>Üretilen yorumlar algoritmik bir sezgi simülasyonu olup tıbbi, hukuki veya finansal bağlayıcılık taşımaz.</li>
         </ul>
 
         <h2>4. Reklamlar ve Takip (App Tracking Transparency & AdMob)</h2>
-        <p>Nevori, ücretsiz kotaları finanse etmek amacıyla <strong>Google AdMob</strong> reklam ağını kullanır:</p>
+        <p>Nevori, ücretsiz kullanım kotalarını finanse etmek amacıyla <strong>Google AdMob</strong> reklam ağını kullanır:</p>
         <ul>
-            <li><strong>Ödüllü ve Geçiş Reklamları:</strong> Seans hakkı kazanmak veya fal kilidini açmak için ödüllü video reklamlar sunulur.</li>
-            <li><strong>Apple ATT İzni (iOS):</strong> iOS 14.5 ve üzeri cihazlarda reklamların ilgi alanlarınıza göre kişiselleştirilebilmesi için izin sorulur. Kullanıcı izni reddetse dahi uygulama tüm fonksiyonlarıyla çalışmaya devam eder; yalnızca kişiselleştirilmemiş genel reklamlar gösterilir.</li>
+            <li><strong>Ödüllü ve Geçiş Reklamları:</strong> Seans hakkı kazanmak veya fal kilidini açmak için ödüllü video reklamlar görüntülenir.</li>
+            <li><strong>Apple ATT İzni (iOS):</strong> iOS 14.5 ve üzeri cihazlarda, reklamların ilgi alanlarınıza uygun kişiselleştirilebilmesi için Uygulama Takip Şeffaflığı (ATT) izni sorulur. Kullanıcı bu izni reddettiğinde de uygulama eksiksiz çalışmaya devam eder; yalnızca kişiselleştirilmemiş jenerik reklamlar gösterilir.</li>
         </ul>
 
         <h2>5. Üçüncü Taraf Altyapı Sağlayıcılar</h2>
+        <p>Verileriniz yalnızca uygulamanın kesintisiz çalışması için gerekli olan şu küresel sağlayıcıların güvenli altyapılarında işlenir:</p>
         <ul>
-            <li><strong>Google Firebase (Auth & Firestore):</strong> Güvenli kimlik doğrulama ve kullanıcı yaşam dosyasının şifrelenmiş veri tabanında tutulması.</li>
+            <li><strong>Google Firebase (Auth & Firestore):</strong> Güvenli şifrelenmiş kimlik doğrulama ve kullanıcı yaşam dosyasının bulut üzerinde tutulması.</li>
             <li><strong>Google Cloud & Gemini API:</strong> Doğal dil işleme ve fal sentezi motoru.</li>
             <li><strong>Google Mobile Ads (AdMob):</strong> Reklam gösterim hizmeti.</li>
             <li><strong>Apple Inc.:</strong> Sign in with Apple kimlik doğrulama altyapısı.</li>
         </ul>
 
-        <h2>6. Hesap Silme ve Verilerin Kalıcı Olarak Yok Edilmesi</h2>
-        <p>Kullanıcılar istedikleri an hiçbir onay beklemeden tüm verilerini silebilirler:</p>
+        <h2>6. Veri Güvenliği ve Saklama Süresi</h2>
+        <p>Tüm kullanıcı verileri, iletim sırasında HTTPS/TLS şifreleme protokolleri ile ve Firestore üzerinde endüstri standardı güvenlik kuralları altında korunur. Kullanıcı oturumu açık kaldığı müddetçe yaşam dosyası ve geçmiş fal kayıtları profilinizde saklanır.</p>
+
+        <h2>7. Hesap Silme ve Verilerin Kalıcı Olarak Yok Edilmesi (Right to be Forgotten)</h2>
+        <p>Apple App Store ve Google Play yönergeleri doğrultusunda, kullanıcılar istedikleri an hiçbir onay beklemeden tüm verilerini silebilirler:</p>
         <ul>
             <li>Uygulama içerisinden <strong>Profil > Kader Bağını Kopar ve Hesabı Sil</strong> butonuna tıklandığında;</li>
-            <li>Kullanıcının Firebase Auth oturumu, Firestore veritabanındaki tüm tarot geçmişi, telve kayıtları, hafıza dosyası ve profil bilgileri <strong>anında ve tamamen silinir</strong>.</li>
+            <li>Kullanıcının Firebase Auth oturumu, Firestore veritabanındaki tüm tarot geçmişi, telve kayıtları, hafıza dosyası ve profil bilgileri <strong>anında, geri döndürülemez biçimde ve tamamen silinir</strong>.</li>
         </ul>
 
-        <h2>7. İletişim Bilgileri</h2>
+        <h2>8. Çocukların Gizliliği</h2>
+        <p>Nevori, 13 yaşın (veya bulunduğunuz ülkedeki geçerli yasal yaş sınırının) altındaki çocuklara yönelik olarak tasarlanmamıştır. Bilerek çocuklardan kişisel veri toplamayız. Bu durumun tespiti halinde ilgili veriler derhal sistemlerimizden temizlenir.</p>
+
+        <h2>9. Politika Değişiklikleri</h2>
+        <p>Gizlilik Politikamız yasal düzenlemeler veya yeni uygulama özellikleri doğrultusunda güncellenebilir. Değişiklikler bu web sayfası üzerinden güncel yürürlük tarihiyle yayınlanacaktır.</p>
+
+        <h2>10. İletişim Bilgileri</h2>
+        <p>Gizlilik uygulamalarımız, kişisel verileriniz veya hesap silme taleplerinizle ilgili her türlü soru için bizimle doğrudan iletişime geçebilirsiniz:</p>
         <ul>
             <li><strong>Geliştirici / Veri Sorumlusu:</strong> İbrahim Güler</li>
             <li><strong>E-posta:</strong> <a href="mailto:info.ibrahimguler@gmail.com">info.ibrahimguler@gmail.com</a></li>
             <li><strong>Uygulama:</strong> Nevori</li>
         </ul>
-    </div>
+    </section>
 
-    <!-- ======================================================== -->
-    <!-- SEKME 2: KULLANIM KOŞULLARI (EULA & TERMS OF SERVICE)     -->
-    <!-- ======================================================== -->
-    <div id="terms-pane" class="tab-pane">
+    <hr class="divider">
+
+    <!-- ========================================== -->
+    <!-- BÖLÜM 2: KULLANIM KOŞULLARI (EULA)        -->
+    <!-- ========================================== -->
+    <section id="kullanim-kosullari">
         <h1>Nevori Kullanım Koşulları (EULA)</h1>
         <div class="meta-info">Son Güncelleme: 4 Ekim 2026 | Sürüm: 1.0.0</div>
 
-        <p>Bu Kullanım Koşulları ve Son Kullanıcı Lisans Sözleşmesi ("Sözleşme"), Nevori mobil uygulamasının kullanım şartlarını belirler. Uygulamayı indirerek veya kullanarak bu sözleşmedeki şartları peşinen kabul etmiş sayılırsınız.</p>
+        <p>Bu Kullanım Koşulları ve Son Kullanıcı Lisans Sözleşmesi ("Sözleşme"), Nevori mobil uygulamasının kullanım şartlarını belirler. Uygulamayı indirerek veya kullanarak bu şartları peşinen kabul etmiş sayılırsınız.</p>
 
         <div class="highlight-box">
-            <strong>Yasal Uyarı:</strong> Nevori bir eğlence ve yapay zeka deneyim uygulamasıdır. Üretilen hiçbir içerik (tarot açılımları, fincan analizleri veya seans diyalogları) profesyonel psikolojik danışmanlık, tıbbi teşhis, hukuki veya finansal tavsiye niteliği taşımaz. Kararlarınızın sorumluluğu tamamen kendinize aittir.
+            <strong>Yasal Sorumluluk Reddi (Disclaimer):</strong> Nevori, eğlence ve kişisel farkındalık odaklı bir yapay zeka deneyim uygulamasıdır. Uygulama içerisindeki hiçbir fal yorumu, tarot sentezi veya seans diyaloğu tıbbi, psikiyatrik, hukuki veya finansal bir tavsiye ya da teşhis niteliği taşımaz. Gerçek yaşam kararlarınızın sorumluluğu tamamen şahsınıza aittir.
         </div>
 
-        <h2>1. Yapay Zeka Çıktıları ve İçerik Sorumluluğu</h2>
+        <h2>1. Yapay Zeka Çıktıları ve Doğruluk Payı</h2>
         <ul>
-            <li>Uygulama içindeki mistik rehber Nevori, büyük dil modelleri (LLM) tarafından desteklenen yapay zeka tabanlı bir diyalog motorudur.</li>
-            <li>Yapay zeka modelleri zaman zaman kurgusal, metaforik veya gerçek dışı ifadeler ("halüsinasyon") üretebilir. Kullanıcı bu durumun farkında olduğunu ve bu yorumlara dayanarak hayati kararlar almayacağını taahhüt eder.</li>
+            <li>Nevori, büyük dil modelleri (LLM) tarafından beslenen sezgisel bir kurgu motorudur.</li>
+            <li>Yapay zeka modelleri bazen gerçek dışı, metaforik veya yanıltıcı ifadeler ("halüsinasyon") üretebilir. Kullanıcı bu çıktılara dayanarak kesin yargılara varmayacağını kabul eder.</li>
         </ul>
 
-        <h2>2. Kabul Edilebilir Kullanım ve Kesin Yasaklar</h2>
-        <p>Kullanıcı, uygulama içerisindeki canlı seans girişinde ve profil tanımlamalarında aşağıdaki kurallara uymakla yükümlüdür:</p>
+        <h2>2. Kullanıcı Davranış Kuralları ve Yasaklar</h2>
+        <p>Uygulamadaki seans girişlerinde ve profil alanlarında kullanıcılar aşağıdaki fiillerden kaçınmakla yükümlüdür:</p>
         <ul>
-            <li>Nefret söylemi, şiddet teşviki, ırkçı, cinsel içerikli veya yasa dışı mesajlar yazamaz.</li>
-            <li>Kendine zarar verme, intihar eğilimi veya başkalarına yönelik tehdit içeren metinler giremez.</li>
-            <li>Uygulama sunucularını, API anahtarlarını veya yapay zeka güvenliğini manipüle etmeye yönelik saldırı (prompt injection, reverse engineering, scraping) gerçekleştiremez.</li>
+            <li>Şiddet, nefret söylemi, ırkçılık veya yasa dışı unsurlar içeren ifadeler kullanmak.</li>
+            <li>Kendine zarar verme veya başkalarını tehdit etme amaçlı istemler oluşturmak.</li>
+            <li>Uygulama altyapısına, API mekanizmalarına veya güvenlik kontrollerine tersine mühendislik (reverse engineering) uygulamak.</li>
         </ul>
 
-        <h2>3. Günlük Kotalar ve Reklam Destekli Model</h2>
+        <h2>3. Kotalar, Limitler ve Reklam Modeli</h2>
         <ul>
-            <li>Nevori temel özellikleri itibarıyla reklam destekli ücretsiz bir model sunar.</li>
-            <li>Günün belirli limitleri (günlük 1 fincan, 1 tarot ve 2 kullanıcı seans mesajı) tamamlandığında kilit mekanizması devreye girer ve sayaç yerel saat dilimine göre gece yarısı (00:00) sıfırlanır.</li>
-            <li>Kullanıcı, ödüllü reklamları atlamak için üçüncü taraf reklam engelleyici veya sahte istek araçları kullanamaz.</li>
+            <li>Nevori, günlük kotalarla sınırlanmış reklam destekli bir model sunar (günlük 1 fincan, 1 tarot ve 2 kullanıcı mesajı).</li>
+            <li>Kota tamamlandığında gece yarısı (00:00) yerel saatine kadar kilit devreye girer. Reklam engelleyici veya hileli yöntemlerle kilitlerin aşılması yasaktır.</li>
         </ul>
 
-        <h2>4. Fikri Mülkiyet Hakları</h2>
-        <p>Nevori logosu, Wheatley esintili mekanik küre arayüz tasarımları, cam panel (glassmorphism) stilleri ve derlenmiş kodlar geliştiricinin mülkiyetindedir. Kopyalanamaz veya izinsiz dağıtılamaz.</p>
+        <h2>4. Apple Standart Lisans Sözleşmesi</h2>
+        <p>Apple iOS platformu kullanıcıları için bu metne ek olarak <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple Standart Son Kullanıcı Lisans Sözleşmesi (Standard EULA)</a> hükümleri geçerlidir.</p>
 
-        <h2>5. Hizmetin Değiştirilmesi ve Fesih</h2>
-        <p>Geliştirici, uygulamanın özelliklerini, modellerini ve kotalarını dilediği zaman güncelleme hakkını saklı tutar. Sözleşme şartlarına aykırı davranan kullanıcıların erişimi engellenebilir.</p>
-
-        <h2>6. Standart Apple EULA</h2>
-        <p>iOS kullanıcıları için bu şartlara ek olarak <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple Standart Lisans Sözleşmesi (Standard EULA)</a> hükümleri de geçerlidir.</p>
-
-        <h2>7. İletişim</h2>
-        <p>Kullanım koşulları hakkındaki sorularınız için: <a href="mailto:info.ibrahimguler@gmail.com">info.ibrahimguler@gmail.com</a></p>
-    </div>
+        <h2>5. İletişim</h2>
+        <p>Kullanım şartları ve lisans konuları hakkındaki talepleriniz için: <a href="mailto:info.ibrahimguler@gmail.com">info.ibrahimguler@gmail.com</a></p>
+    </section>
 
     <footer>
         &copy; 2026 Nevori. Tüm hakları saklıdır. Geliştirici: İbrahim Güler.
     </footer>
 
-    <script>
-        function switchTab(tabId) {
-            const privacyPane = document.getElementById('privacy-pane');
-            const termsPane = document.getElementById('terms-pane');
-            const buttons = document.querySelectorAll('.tab-btn');
-
-            if (tabId === 'privacy') {
-                privacyPane.classList.add('active');
-                termsPane.classList.remove('active');
-                buttons[0].classList.add('active');
-                buttons[1].classList.remove('active');
-                window.location.hash = 'privacy';
-            } else {
-                privacyPane.classList.remove('active');
-                termsPane.classList.add('active');
-                buttons[0].classList.remove('active');
-                buttons[1].classList.add('active');
-                window.location.hash = 'terms';
-            }
-        }
-
-        // URL hash'ine göre sekme açılışı (Örn: index.html#terms)
-        window.addEventListener('DOMContentLoaded', () => {
-            if (window.location.hash === '#terms') {
-                switchTab('terms');
-            }
-        });
-    </script>
 </body>
 </html>
